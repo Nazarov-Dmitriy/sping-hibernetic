@@ -11,6 +11,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "CUSTOMERS")
+@IdClass(CustomersId.class)
 public class Customers {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -27,9 +28,9 @@ public class Customers {
     @Column(nullable = false)
     private int age;
 
-    @Column(nullable = false, length = 12)
-    private String phone_number;
+    @Column(nullable = false, length = 12, name = "phone_number")
+    private String phoneNumber;
 
-    @Column(nullable = false)
-    private String city_of_living;
+    @Column(nullable = false, name = "city_of_living")
+    private String cityOfLiving;
 }

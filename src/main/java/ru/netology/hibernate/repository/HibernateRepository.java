@@ -15,7 +15,7 @@ public class HibernateRepository {
 
     @Transactional
     public List<Customers> personsByCity(String city) {
-        var query = entityManager.createQuery("select customers from Customers customers  where customers.city_of_living = :city", Customers.class);
+        var query = entityManager.createQuery("select customers from Customers customers  where customers.cityOfLiving = :city", Customers.class);
         query.setParameter("city", city);
         return query.getResultList();
     }

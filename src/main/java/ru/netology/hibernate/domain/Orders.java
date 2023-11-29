@@ -21,8 +21,8 @@ public class Orders {
     @Column(nullable = false)
     private Date date;
 
-    @Column(nullable = false)
-    private String product_name;
+    @Column(nullable = false , name = "product_name" )
+    private String productName;
 
     @Column(nullable = false)
     private int amount;
